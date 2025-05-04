@@ -1,44 +1,12 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materi</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body class="bg-gray-50">
+@extends('layouts.dashboard')
 
-    <div class="flex">
-  
-        <!-- Sidebar -->
-        <aside class="fixed w-20 md:w-24 bg-pink-100 border-r border-gray-300 h-screen flex flex-col items-center py-4 space-y-6">
-            <button class="text-purple-700 hover:text-purple-900">
-            <span class="material-icons">list</span>
-            </button>
-            <nav class="flex flex-col items-center space-y-6 text-purple-800 text-sm">
-                <a href="{{ route('pendaftaran.create', ['harga' => 300000]) }}" class="flex flex-col items-center">
-                    <span class="material-icons">add</span>
-                    Daftar
-                </a>
-                <a href="{{ url('/dashboard') }}" class="flex flex-col items-center text-purple-800 active:bg-blue-200 active:text-white rounded-md px-3 py-2 transition-all duration-150">
-                    <span class="material-icons">dashboard</span>
-                    Dashboard
-                </a>
-                <a href="{{ url('/materi') }}" class="flex flex-col items-center">
-                    <span class="material-icons">school</span>
-                    Kursus
-                </a>
+@section('title', 'Dashboard Kursus Bahasa')
 
-                <a href="{{ url('/history') }}" class="flex flex-col items-center">
-                    <span class="material-icons">book</span>
-                    History
-                </a>
-            </nav>
-        </aside>
+@section('content')
+    <div class="flex min-h-screen">
 
-        <!-- Main Content -->
-        <div class="flex-1 pt-6 pl-24 pr-5">
+        <!-- Konten Utama -->
+        <main class="flex-1 p-6 bg-gray-100">
             <div class="w-full max-w-4xl mx-auto p-8 bg-white border border-gray-300 rounded-lg shadow-lg">
                 <h2 class="text-center text-lg font-semibold border-b border-gray-300 pb-2 mb-6">Riwayat Pembayaran</h2>
 
@@ -93,7 +61,5 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-    </div>
-</body>
-</html>
+        </main>
+    @endsection
